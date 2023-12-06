@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import BasicDetails from './components/BasicDetails';
@@ -9,6 +9,7 @@ import { Outlet,createBrowserRouter,RouterProvider } from 'react-router-dom';
 import SideBar from './components/SideBar';
 import Error from './components/Error';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 const App=()=>{
   return <div>
@@ -16,7 +17,8 @@ const App=()=>{
     <div className='flex'>
       <SideBar/>
       <Outlet/>
-    </div>  
+    </div> 
+    <div><Footer/></div> 
   </div>
 }
 
@@ -28,7 +30,7 @@ const appRouter = createBrowserRouter([
       children:[
           {
               path:"/",
-              element:<BasicDetails/>,
+              element:<BasicDetails />,
           },
           {
               path:"/document",
