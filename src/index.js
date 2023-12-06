@@ -1,17 +1,52 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import BasicDetails from './components/BasicDetails';
+import Document from './components/Document';
+import StatementOfPurpose from './components/StatementOfPurpose';
+import InterviewAvailability from './components/InterviewAvailability';
+import { Outlet,createBrowserRouter,RouterProvider } from 'react-router-dom';
+import SideBar from './components/SideBar';
+import Error from './components/Error';
+import Navbar from './components/Navbar';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const App=()=>{
+  return <div>
+    <div><Navbar/></div>
+    <div className='flex'>
+      <SideBar/>
+      <Outlet/>
+    </div>  
+  </div>
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const appRouter = createBrowserRouter([
+  {
+      path:'/',
+      element:<App/>,
+      errorElement:<Error/>,
+      children:[
+          {
+              path:"/",
+              element:<BasicDetails/>,
+          },
+          {
+              path:"/document",
+              element:<Document/>,
+          },
+          {
+              path:"/sop",
+              element:<StatementOfPurpose/>,
+          },
+          {
+              path:"/interview",
+              element:<InterviewAvailability/>,
+          },
+       
+      ]
+  }
+])
+
+const root = ReactDOM.createRoot(document.getElementById("root"))
+
+root.render(<RouterProvider router={appRouter}/>);
