@@ -12,8 +12,12 @@ export default function BasicDetails() {
   };
 
   return (
-    <div className='form-container'>
+    <div className='form-container flex-col'>
     <section className='flex-col form'>
+      <div>
+        <h3 style={{margin:"0px"}}>Preview</h3>
+        <p style={{margin:"0px",paddingBottom:"5px", fontSize:"small"}}>you will be able to customize the fields in later stages</p>
+      </div>
       <div className='section-title'>
         <h2>Details Collection</h2>
         <p>Provide following information to process your application</p>

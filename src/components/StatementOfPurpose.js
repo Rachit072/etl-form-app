@@ -15,6 +15,10 @@ export default function StatementOfPurpose() {
     <div>
       <div className='form-container'>
       <section className='flex-col form'>
+        <div>
+          <h3 style={{margin:"0px"}}>Preview</h3>
+          <p style={{margin:"0px",paddingBottom:"5px", fontSize:"small"}}>you will be able to customize the fields in later stages</p>
+        </div>
         <div className='section-title'>
           <h2>Statement Of Purpose</h2>
           <p>Provide following information to process your application</p>
