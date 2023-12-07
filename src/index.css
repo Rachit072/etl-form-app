@@ -3,8 +3,6 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 .section{
@@ -12,10 +10,10 @@ body {
   border: 1px solid grey;
   border-radius: 5px;
   padding:5px 0px;
-  width: 265px;
-  height: 90px;
+  width: 250px;
+  height: 100px;
   text-align: center;
-  margin: 5px;
+  margin: 10px;
   text-decoration: none;
 }
 .section h4{
@@ -60,7 +58,7 @@ p{
   padding: 10px 50px;
   background-color: antiquewhite;
   border-radius: 10px;
-  width: 903px;
+  width: 953px;
   height: 821px;
 }
 .form{
@@ -84,7 +82,7 @@ input{
   border: 1px solid #ccc
 }
 .sidebar{
-  width:310px
+  width:300px
 }
 .section.active {
   background-color: skyblue;
@@ -137,16 +135,16 @@ input{
 .nav-item{
   padding-right: 10px;
   color:grey;
-  border-radius: 60%;
-  padding: 0.5px 3px;
+  border-radius: 55%;
+  padding: 0.7px 4px;
   margin-right: 5px;
   border: 1px solid grey;
 }
 .nav-item-active{
   padding-right: 10px;
   color:green;
-  border-radius: 60%;
-  padding: 0.5px 3px;
+  border-radius: 55%;
+  padding: 0.7px 4px;
   margin-right: 5px;
   border: 1px solid green;
 }
