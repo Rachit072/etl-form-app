@@ -98,7 +98,7 @@ function InterviewAvailability() {
           </label>
         </div>
 
-        <div>
+        <div className='select-div'>
           <label>
             e. Time Zone (Dropdown list)*
             <select
@@ -115,8 +115,7 @@ function InterviewAvailability() {
             </select>
           </label>
         </div>
-
-        <div>
+        <div className='select-div'>
           <label>
             f. Interview Medium (Dropdown list)*
             <select

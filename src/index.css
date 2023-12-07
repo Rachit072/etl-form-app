@@ -94,12 +94,24 @@ input{
   border-radius: 5px;
   color: blue;
   padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+.btn:hover{
+  border: 1px solid green;
+  background-color: lightgreen;
+  color: green;
 }
 .f-btn{
   border: 1px solid gray;
   background-color: lightslategrey;
   border-radius: 5px;
   padding: 0.5rem 1rem;
+}
+.select-div {
+  padding-top: 10px;
+}
+select{
+  margin-left: 10px;
 }
 .btn-box{
   display: flex;
