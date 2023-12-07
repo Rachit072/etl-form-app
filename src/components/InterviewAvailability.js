@@ -1,15 +1,26 @@
 import React from 'react'
 import { useForm } from '../utils/Formutils'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import { useFormData } from '../utils/FormDataContext';
 
 function InterviewAvailability() {
   const { formData, dispatch } = useFormData();
   const { handleChange } = useForm();
+  const navigate = useNavigate();
+
   const handleFieldChange = (e) => {
     handleChange(e);
     dispatch({ type: 'updateFormData', payload: { ...formData, [e.target.name]: e.target.value } });
   };
+  const validateAndProceed=()=>{
+    if(formData.interviewEmail && formData.location
+    && formData.interviewDate && formData.interviewTime 
+    && formData.timeZone && formData.interviewMedium){
+      navigate('/submit')
+    } else {
+      alert("Please fill in required fields before proceeding.")
+    }
+  }
 
   const commonTimeZones = [
     { value: 'Select Time Zone', label: 'Select Time Zone' },
@@ -121,7 +132,8 @@ function InterviewAvailability() {
           </label>
           <div className='btn-Container-2'>
           <button className='btn'><Link className='link' to='/sop'>Back</Link></button>
-          <button className='btn'><Link className='link' to='/submit'>Submit</Link></button>
+          <button className='btn' onClick={validateAndProceed}>Submit</button>
+          {/* <button className='btn'><Link className='link' to='/submit'>Submit</Link></button> */}
         </div>
         </div>
         </div>

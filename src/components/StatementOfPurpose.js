@@ -1,15 +1,25 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import { useForm } from '../utils/Formutils'
 import { useFormData } from '../utils/FormDataContext';
 
 export default function StatementOfPurpose() {
   const { formData, dispatch } = useFormData();
   const { handleChange } = useForm();
+  const navigate = useNavigate();
+
   const handleFieldChange = (e) => {
     handleChange(e);
     dispatch({ type: 'updateFormData', payload: { ...formData, [e.target.name]: e.target.value } });
   };
+
+  const validateAndProceed=()=>{
+    if(formData.q1 && formData.q2 && formData.q3){
+      navigate('/interview')
+    } else {
+      alert("Please fill in required fields before proceeding.")
+    }
+  }
 
   return (
     <div>
@@ -63,7 +73,8 @@ export default function StatementOfPurpose() {
         </label>
         <div className='btn-Container-2'>
           <button className='btn'><Link className='link' to='/document'>Back</Link></button>
-          <button className='btn'><Link className='link' to='/interview'>Next</Link></button>
+          <button className='btn' onClick={validateAndProceed}>Next</button>
+          {/* <button className='btn'><Link className='link' to='/interview'>Next</Link></button> */}
         </div>
         </div>
       </section>

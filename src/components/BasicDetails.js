@@ -1,14 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {useNavigate } from 'react-router-dom';
 import { useForm } from '../utils/Formutils';
 import { useFormData } from '../utils/FormDataContext';
 
 export default function BasicDetails() {
   const { formData, dispatch } = useFormData();
   const { handleChange } = useForm();
+  const navigate = useNavigate();
+
   const handleFieldChange = (e) => {
     handleChange(e);
     dispatch({ type: 'updateFormData', payload: { ...formData, [e.target.name]: e.target.value } });
+  };
+  const validateAndProceed = () => {
+    if (formData.name && formData.email) {
+      navigate('/document');
+    } else {
+      alert('Please fill in required fields before proceeding.');
+    }
   };
 
   return (
@@ -56,7 +65,8 @@ export default function BasicDetails() {
         </div>
       </div>
       <div className='btn-Container'>
-        <button className='btn'><Link className='link' to='/document'>Next</Link></button>
+        <button className='btn' onClick={validateAndProceed}>Next</button>
+        {/* <button className='btn'><Link className='link' to='/document'>Next</Link></button> */}
       </div>
       </div>
     </section>
