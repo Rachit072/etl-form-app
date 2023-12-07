@@ -22,6 +22,7 @@ function Navbar() {
           <span className='nav-item'><FontAwesomeIcon icon={faCheckCircle} /></span>
           Review
         </div>
+        <div>X</div>
       </div>
     </div>
   )

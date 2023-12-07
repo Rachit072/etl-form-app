@@ -12,7 +12,7 @@ function SideBar() {
             <p style={{color:"white"}}>Start creating a new form with the wide option of fields available</p>
           </Link>
         </li>
-        <li style={{listStyle:'none'}}><hr/></li>
+        <li className='li-text'>Explore the following template</li>
         <li className={`section ${location.pathname === '/' ? 'active' : ''}`}>
           <Link className='link' to='/'>
             <h4>Details Collection</h4>

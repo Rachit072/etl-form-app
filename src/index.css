@@ -11,12 +11,15 @@ body {
   list-style: none;
   border: 1px solid grey;
   border-radius: 5px;
-  padding: 5px;
-  width: 200px;
+  padding:5px 0px;
+  width: 260px;
   text-align: center;
-  margin: 10px;
-  font-size: x-small;
+  margin: 5px;
+  font-size: small;
   text-decoration: none;
+}
+ul{
+  padding-inline-start: 15px;
 }
 .section-title{
   color: #007bff;
@@ -31,17 +34,24 @@ body {
 p{
   color: grey;
 }
+.li-text{
+  color: grey;
+  font-size: x-small;
+  padding: 5px 60px;
+}
 .form-container{
   display: flex;
   padding: 10px 50px;
   background-color: antiquewhite;
   border-radius: 10px;
-  margin: auto;
+  width: 903px;
+  height: 821px;
 }
 .form{
   background-color: white;
   border-radius: 10px;
   padding: 5rem 5rem;
+  width: 718px;
 }
 textarea{
   width: 100%;
@@ -58,7 +68,7 @@ input{
   border: 1px solid #ccc
 }
 .sidebar{
-  padding: 0rem 2rem;
+  width:310px
 }
 .section.active {
   background-color: skyblue;
