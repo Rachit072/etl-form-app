@@ -19,6 +19,7 @@ body {
   text-decoration: none;
 }
 .section-title{
+  color: #007bff;
   
 }
 .link{
@@ -32,7 +33,7 @@ p{
 }
 .form-container{
   display: flex;
-  padding: 1rem 10rem;
+  padding: 10px 50px;
   background-color: antiquewhite;
   border-radius: 10px;
   margin: auto;
@@ -53,13 +54,27 @@ label{
 input{
   width: 100%;
   padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc
 }
 .sidebar{
   padding: 0rem 2rem;
 }
+.section.active {
+  background-color: skyblue;
+  border: 1px solid blue;
+  color: blue;
+}
 .btn{
   border: 1px solid blue;
   background-color: skyblue;
+  border-radius: 5px;
+  color: blue;
+  padding: 0.5rem 1rem;
+}
+.f-btn{
+  border: 1px solid gray;
+  background-color: lightslategrey;
   border-radius: 5px;
   padding: 0.5rem 1rem;
 }
@@ -68,6 +83,16 @@ input{
   justify-content: flex-end;
   padding: 1rem 12rem;
   background-color: gainsboro;
+}
+.btn-Container{
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 0px;
+}
+.btn-Container-2{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0px;
 }
 .flex{
   display: flex;
@@ -81,4 +106,20 @@ input{
   justify-content: space-around;
   padding: 1rem;
   border-bottom: 1px solid grey;
+}
+.nav-item{
+  padding-right: 10px;
+  color:grey;
+  border-radius: 60%;
+  padding: 0.5px 3px;
+  margin-right: 5px;
+  border: 1px solid grey;
+}
+.nav-item-active{
+  padding-right: 10px;
+  color:green;
+  border-radius: 60%;
+  padding: 0.5px 3px;
+  margin-right: 5px;
+  border: 1px solid green;
 }

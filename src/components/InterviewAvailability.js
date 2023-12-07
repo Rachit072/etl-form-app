@@ -1,5 +1,6 @@
 import React from 'react'
 import { useForm } from '../utils/Formutils'
+import {Link} from 'react-router-dom'
 
 function InterviewAvailability() {
   const {formData,handleChange} = useForm();
@@ -16,9 +17,8 @@ function InterviewAvailability() {
     { value: 'AEDT', label: 'Australian Eastern Daylight Time (AEDT)' },
   ];
   return (
-    <div>
       <div className='form-container'>
-      <section className='flex-col form'>
+        <section className='flex-col form'>
         <div className='section-title'>
           <h2>Interview Availability</h2>
           <p>Provide following information to process your application</p>
@@ -107,9 +107,12 @@ function InterviewAvailability() {
               <option value="On-Line">On-Line</option>
             </select>
           </label>
+          <div className='btn-Container-2'>
+          <button className='btn'><Link className='link' to='/sop'>Back</Link></button>
+          <button className='btn'><Link className='link' to='/submit'>Submit</Link></button>
+        </div>
         </div>
       </section>
-    </div>
     </div>
   )
 }

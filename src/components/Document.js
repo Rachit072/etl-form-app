@@ -1,5 +1,6 @@
 import React from 'react'
 import { useForm } from '../utils/Formutils';
+import {Link} from 'react-router-dom';
 
 function Document() {
   const {handleChange } = useForm();
@@ -51,7 +52,10 @@ function Document() {
           Others:
           <input type="file" name="others" onChange={handleChange} />
         </label>
-
+        </div>
+        <div className='btn-Container-2'>
+          <button className='btn'><Link className='link' to='/'>Back</Link></button>
+          <button className='btn'><Link className='link' to='/sop'>Next</Link></button>
         </div>
       </section>
     </div>

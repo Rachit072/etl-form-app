@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import { useForm } from '../utils/Formutils'
 
 export default function StatementOfPurpose() {
@@ -50,7 +51,10 @@ export default function StatementOfPurpose() {
           />
           </div>
         </label>
-
+        <div className='btn-Container-2'>
+          <button className='btn'><Link className='link' to='/document'>Back</Link></button>
+          <button className='btn'><Link className='link' to='/interview'>Next</Link></button>
+        </div>
         </div>
       </section>
     </div>

@@ -10,6 +10,7 @@ import SideBar from './components/SideBar';
 import Error from './components/Error';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import Submit from './components/Submit';
 
 const App=()=>{
   return <div>
@@ -44,6 +45,10 @@ const appRouter = createBrowserRouter([
               path:"/interview",
               element:<InterviewAvailability/>,
           },
+          {
+              path:"/submit",
+              element:<Submit/>,
+          },
        
       ]
   }
@@ -52,3 +57,4 @@ const appRouter = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"))
 
 root.render(<RouterProvider router={appRouter}/>);
+

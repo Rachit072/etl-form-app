@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useForm } from '../utils/Formutils';
 
 export default function BasicDetails() {
@@ -42,6 +43,9 @@ export default function BasicDetails() {
         <div>
           <input type="date" name="dateOfBirth" value={formData.dateOfBirth} onChange={handleChange} />
         </div>
+      </div>
+      <div className='btn-Container'>
+        <button className='btn'><Link className='link' to='/document'>Next</Link></button>
       </div>
       </div>
     </section>
