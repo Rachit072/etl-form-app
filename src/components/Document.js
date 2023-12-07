@@ -19,7 +19,7 @@ function Document() {
           <h2>Document Collection</h2>
           <p>Provide following information to process your application</p>
         </div>
-        <div>
+        <div className='form-box'> 
         <label>
           Class 10 Marksheet*:
           <input type="file" name="class10Marksheet" onChange={handleFieldChange} required />

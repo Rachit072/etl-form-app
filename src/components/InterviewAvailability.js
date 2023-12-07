@@ -30,6 +30,7 @@ function InterviewAvailability() {
           <h2>Interview Availability</h2>
           <p>Provide following information to process your application</p>
         </div>
+        <div className='form-box'>
         <div>
         <label>
             a. Email*
@@ -117,6 +118,7 @@ function InterviewAvailability() {
           <div className='btn-Container-2'>
           <button className='btn'><Link className='link' to='/sop'>Back</Link></button>
           <button className='btn'><Link className='link' to='/submit'>Submit</Link></button>
+        </div>
         </div>
         </div>
       </section>

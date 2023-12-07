@@ -19,7 +19,7 @@ export default function StatementOfPurpose() {
           <h2>Statement Of Purpose</h2>
           <p>Provide following information to process your application</p>
         </div>
-        <div>
+        <div className='form-box'>
         <label>
           a. Tell me about a time you were asked to do something you had never done before. How did you react? What did you learn?*
           <div>

@@ -18,7 +18,7 @@ export default function BasicDetails() {
         <h2>Details Collection</h2>
         <p>Provide following information to process your application</p>
       </div>
-      <div>
+      <div className='form-box'>
       <div>
         <label>
           Name*:

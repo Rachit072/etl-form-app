@@ -12,18 +12,32 @@ body {
   border: 1px solid grey;
   border-radius: 5px;
   padding:5px 0px;
-  width: 260px;
+  width: 265px;
   text-align: center;
   margin: 5px;
-  font-size: small;
   text-decoration: none;
 }
+.section h4{
+  font-size: small;
+  margin-bottom: 2px;
+}
+.section p{
+  font-size: x-small;
+  padding: 0px 8px;
+}
+
 ul{
   padding-inline-start: 15px;
 }
 .section-title{
   color: #007bff;
+  background-color: aliceblue;
+  padding: 10px 25px;
   
+}
+.form-box{
+  width:515px;
+  padding: 10px 80px 20px 80px;
 }
 .link{
   text-decoration: none;
