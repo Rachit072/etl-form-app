@@ -1,9 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useForm } from '../utils/Formutils';
+import { useFormData } from '../utils/FormDataContext';
 
 export default function BasicDetails() {
-  const { formData, handleChange } = useForm();
+  const { formData, dispatch } = useFormData();
+  const { handleChange } = useForm();
+  const handleFieldChange = (e) => {
+    handleChange(e);
+    dispatch({ type: 'updateFormData', payload: { ...formData, [e.target.name]: e.target.value } });
+  };
+
   return (
     <div className='form-container'>
     <section className='flex-col form'>
@@ -17,7 +24,7 @@ export default function BasicDetails() {
           Name*:
         </label>
         <div>
-          <input type="text" name="name" value={formData.name} onChange={handleChange} required />
+          <input type="text" name="name" value={formData.name} onChange={handleFieldChange} required />
         </div>
       </div>
       <div>
@@ -25,7 +32,7 @@ export default function BasicDetails() {
           Email*:
         </label>
         <div>
-          <input type="email" name="email" value={formData.email} onChange={handleChange} required />
+          <input type="email" name="email" value={formData.email} onChange={handleFieldChange} required />
         </div>
       </div>
       <div>
@@ -33,7 +40,7 @@ export default function BasicDetails() {
           Mobile Number:
         </label>
         <div>
-          <input type="tel" name="mobileNumber" value={formData.mobileNumber} onChange={handleChange} />
+          <input type="tel" name="mobileNumber" value={formData.mobileNumber} onChange={handleFieldChange} />
         </div>
       </div>
       <div>
@@ -41,7 +48,7 @@ export default function BasicDetails() {
           Date of Birth:
         </label>
         <div>
-          <input type="date" name="dateOfBirth" value={formData.dateOfBirth} onChange={handleChange} />
+          <input type="date" name="dateOfBirth" value={formData.dateOfBirth} onChange={handleFieldChange} />
         </div>
       </div>
       <div className='btn-Container'>

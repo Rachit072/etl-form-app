@@ -1,9 +1,16 @@
 import React from 'react'
 import { useForm } from '../utils/Formutils'
 import {Link} from 'react-router-dom'
+import { useFormData } from '../utils/FormDataContext';
 
 function InterviewAvailability() {
-  const {formData,handleChange} = useForm();
+  const { formData, dispatch } = useFormData();
+  const { handleChange } = useForm();
+  const handleFieldChange = (e) => {
+    handleChange(e);
+    dispatch({ type: 'updateFormData', payload: { ...formData, [e.target.name]: e.target.value } });
+  };
+
   const commonTimeZones = [
     { value: 'Select Time Zone', label: 'Select Time Zone' },
     { value: 'GMT', label: 'Greenwich Mean Time (GMT)' },
@@ -30,7 +37,7 @@ function InterviewAvailability() {
               type="email"
               name="interviewEmail"
               value={formData.interviewEmail}
-              onChange={handleChange}
+              onChange={handleFieldChange}
               required
             />
           </label>
@@ -43,7 +50,7 @@ function InterviewAvailability() {
               type="text"
               name="location"
               value={formData.location}
-              onChange={handleChange}
+              onChange={handleFieldChange}
               required
             />
           </label>
@@ -56,7 +63,7 @@ function InterviewAvailability() {
               type="date"
               name="interviewDate"
               value={formData.interviewDate}
-              onChange={handleChange}
+              onChange={handleFieldChange}
               required
             />
           </label>
@@ -69,7 +76,7 @@ function InterviewAvailability() {
               type="time"
               name="interviewTime"
               value={formData.interviewTime}
-              onChange={handleChange}
+              onChange={handleFieldChange}
               required
             />
           </label>
@@ -81,7 +88,7 @@ function InterviewAvailability() {
             <select
               name="timeZone"
               value={formData.timeZone}
-              onChange={handleChange}
+              onChange={handleFieldChange}
               required
             >
               {commonTimeZones.map((zone, index) => (
@@ -99,7 +106,7 @@ function InterviewAvailability() {
             <select
               name="interviewMedium"
               value={formData.interviewMedium}
-              onChange={handleChange}
+              onChange={handleFieldChange}
               required
             >
               <option value="">Select Interview Medium</option>

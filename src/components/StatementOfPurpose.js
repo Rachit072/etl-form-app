@@ -1,9 +1,15 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import { useForm } from '../utils/Formutils'
+import { useFormData } from '../utils/FormDataContext';
 
 export default function StatementOfPurpose() {
-  const { formData, handleChange } = useForm();
+  const { formData, dispatch } = useFormData();
+  const { handleChange } = useForm();
+  const handleFieldChange = (e) => {
+    handleChange(e);
+    dispatch({ type: 'updateFormData', payload: { ...formData, [e.target.name]: e.target.value } });
+  };
 
   return (
     <div>
@@ -20,7 +26,7 @@ export default function StatementOfPurpose() {
             <textarea
             name="q1"
             value={formData.q1}
-            onChange={handleChange}
+            onChange={handleFieldChange}
             maxLength={300}
             required
             />
@@ -33,7 +39,7 @@ export default function StatementOfPurpose() {
           <textarea
             name="q2"
             value={formData.q2}
-            onChange={handleChange}
+            onChange={handleFieldChange}
             maxLength={300}
             required
           />
@@ -45,7 +51,7 @@ export default function StatementOfPurpose() {
           <textarea
             name="q3"
             value={formData.q3}
-            onChange={handleChange}
+            onChange={handleFieldChange}
             maxLength={300}
             required
           />

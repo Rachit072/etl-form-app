@@ -1,9 +1,16 @@
 import React from 'react'
 import { useForm } from '../utils/Formutils';
 import {Link} from 'react-router-dom';
+import { useFormData } from '../utils/FormDataContext';
 
 function Document() {
-  const {handleChange } = useForm();
+  const { formData, dispatch } = useFormData();
+  const { handleChange } = useForm();
+  const handleFieldChange = (e) => {
+    handleChange(e);
+    dispatch({ type: 'updateFormData', payload: { ...formData, [e.target.name]: e.target.value } });
+  };
+  
   return (
     <div>
       <div className='form-container'>
@@ -15,42 +22,42 @@ function Document() {
         <div>
         <label>
           Class 10 Marksheet*:
-          <input type="file" name="class10Marksheet" onChange={handleChange} required />
+          <input type="file" name="class10Marksheet" onChange={handleFieldChange} required />
         </label>
 
         <label>
           Class 12 Marksheet*:
-          <input type="file" name="class12Marksheet" onChange={handleChange} required />
+          <input type="file" name="class12Marksheet" onChange={handleFieldChange} required />
         </label>
 
         <label>
           Graduation Marksheet*:
-          <input type="file" name="graduationMarksheet" onChange={handleChange} required />
+          <input type="file" name="graduationMarksheet" onChange={handleFieldChange} required />
         </label>
 
         <label>
           Post Graduation Marksheet:
-          <input type="file" name="postGraduationMarksheet" onChange={handleChange} />
+          <input type="file" name="postGraduationMarksheet" onChange={handleFieldChange} />
         </label>
 
         <label>
           Resume/CV*:
-          <input type="file" name="resume" onChange={handleChange} required />
+          <input type="file" name="resume" onChange={handleFieldChange} required />
         </label>
 
         <label>
           Recommendation Letter:
-          <input type="file" name="recommendationLetter" onChange={handleChange} />
+          <input type="file" name="recommendationLetter" onChange={handleFieldChange} />
         </label>
 
         <label>
           Salary Slips:
-          <input type="file" name="salarySlips" onChange={handleChange} />
+          <input type="file" name="salarySlips" onChange={handleFieldChange} />
         </label>
 
         <label>
           Others:
-          <input type="file" name="others" onChange={handleChange} />
+          <input type="file" name="others" onChange={handleFieldChange} />
         </label>
         </div>
         <div className='btn-Container-2'>

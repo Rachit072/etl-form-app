@@ -11,13 +11,16 @@ import Error from './components/Error';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Submit from './components/Submit';
+import { FormDataProvider } from './utils/FormDataContext';
 
 const App=()=>{
   return <div>
     <div><Navbar/></div>
     <div className='flex'>
       <SideBar/>
-      <Outlet/>
+      <FormDataProvider>
+        <Outlet/>
+      </FormDataProvider>
     </div> 
     <div><Footer/></div> 
   </div>
